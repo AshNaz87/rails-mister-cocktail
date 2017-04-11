@@ -1,0 +1,18 @@
+<h1 class="text-center">Recipe for <%= @cocktail.name %></h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+
+
+      <%= simple_form_for [@cocktail, @dose] do |f| %>
+        <%= f.input :description, placeholder: "5 lemons" %>
+        <%= f.association :ingredient, collection: @ingredients %>
+        <%= f.submit "Add", class: "btn btn-success" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+ <%= link_to "Delete dose", dose_path(@dose), method: :delete,
+      data: { confirm: "Are you sure?" } %>

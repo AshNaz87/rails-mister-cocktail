@@ -5,6 +5,12 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+# Heroku gem
+gem 'figaro'
+# External CSS/JS Plugins
+source 'https://rails-assets.org' do
+  gem 'rails-assets-plugin'
+end
 # Gemfile
 ruby '2.3.3'
 # Frontend gems
